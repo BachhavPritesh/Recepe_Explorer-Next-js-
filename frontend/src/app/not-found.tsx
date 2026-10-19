@@ -9,13 +9,13 @@ export default function NotFound() {
         textAlign: "center",
       }}
     >
-      <h1 style={{ fontSize: "48px", color: "#c64a2d" }}>
+      <h1 style={{ fontSize: "48px", color: "brown" }}>
         404
       </h1>
 
       <h2>Page Not Found</h2>
 
-      <p style={{ color: "#777777" }}>
+      <p style={{ color: "grey" }}>
         Sorry, we couldn't find the page you are looking for.
       </p>
 
@@ -25,8 +25,8 @@ export default function NotFound() {
           display: "inline-block",
           marginTop: "16px",
           padding: "12px 20px",
-          backgroundColor: "#c64a2d",
-          color: "#ffffff",
+          backgroundColor: "brown",
+          color: "white",
           textDecoration: "none",
           borderRadius: "5px",
         }}
