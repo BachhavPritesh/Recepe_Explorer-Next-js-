@@ -14,7 +14,7 @@ export default function Home() {
         }}
       >
 
-        <div style={{ marginBottom: "28px" }}>
+        <div style={{ marginBottom: "28px",marginLeft:"60px" }}>
           <p style={{ color: "grey" }}>
             Home / Recipes
           </p>
@@ -37,7 +37,7 @@ export default function Home() {
             display: "flex",
             flexWrap: "wrap",
             gap: "22px",
-            justifyContent: "flex-start",
+            justifyContent: "center",
           }}
         >
           {recipes.map((data) => (
