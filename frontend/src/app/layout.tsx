@@ -1,12 +1,9 @@
 
-import type { Metadata } from "next";
 import Header from "../component/header";
+import Footer from "@/component/footer";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Everyday Recipes",
-  description: "Discover delicious recipes for everyday cooking.",
-};
+
 
 export default function RootLayout({
   children,
@@ -18,6 +15,7 @@ export default function RootLayout({
       <body style={{ margin: 0, backgroundColor: "#faf9f6" }}>
         <Header />
         <main>{children}</main>
+        <Footer/>
       </body>
     </html>
   );

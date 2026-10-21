@@ -1,6 +1,7 @@
 
 import RecipeCard from "@/component/recipeCard"
 import { recipes } from '@/data/recipes'
+import SearchRecipes from "@/component/searchBar"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
           padding: "30px 20px",
         }}
       >
+
 
         <div style={{ marginBottom: "28px",marginLeft:"60px" }}>
           <p style={{ color: "grey" }}>
@@ -32,18 +34,7 @@ export default function Home() {
         </div>
 
 
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "22px",
-            justifyContent: "center",
-          }}
-        >
-          {recipes.map((data) => (
-            <RecipeCard key={data.id} recipe={data} />
-          ))}
-        </div>
+       <SearchRecipes />
 
       </div>
     </>

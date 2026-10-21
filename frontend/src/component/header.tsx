@@ -11,7 +11,7 @@ const Header = () => {
                 gap: "200px",
                 flexWrap: "wrap",
                 padding: "20px",
-                backgroundColor: "#ffffff",
+                backgroundColor: "white",
                 border: "1px solid grey",
                 borderRadius:"10px",
                 margin: "5px"

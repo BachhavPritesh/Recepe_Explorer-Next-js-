@@ -1,18 +1,25 @@
 "use client";
 
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { recipes } from "../data/recipes";
 import RecipeCard from "./recipeCard";
+import { getSavedRecipes } from "@/data/recipeStorage";
+import type { Recipe } from "@/types/recipe";
 
 export default function SearchRecipes() {
   const [search, setSearch] = useState("");
+  const [allRecipes, setAllRecipes] = useState<Recipe[]>(recipes);
 
-  const filteredRecipes = recipes.filter((recipe) => {
+  useEffect(() => {
+    const savedRecipes = getSavedRecipes();
+    setAllRecipes([...recipes, ...savedRecipes]);
+  }, []);
+
+  const filteredRecipes = allRecipes.filter((recipe) => {
     return (
       recipe.title.toLowerCase().includes(search.toLowerCase()) ||
-      recipe.cuisine.toLowerCase().includes(search.toLowerCase()) ||
-      recipe.description.toLowerCase().includes(search.toLowerCase())
+      recipe.cuisine.toLowerCase().includes(search.toLowerCase())
     );
   });
 
@@ -20,7 +27,6 @@ export default function SearchRecipes() {
     <div>
       <div style={{ marginBottom: "30px", marginLeft:"60px" }}>
         <label
-          htmlFor="recipe-search"
           style={{
             display: "block",
             marginBottom: "10px",
@@ -50,7 +56,7 @@ export default function SearchRecipes() {
 
       <p style={{ color: "gray", marginBottom: "20px",marginLeft:"60px" }}>
         {filteredRecipes.length}{" "}
-        {filteredRecipes.length === 1 ? "recipe" : "recipes"} found
+         found
       </p>
 
       {filteredRecipes.length > 0 ? (
